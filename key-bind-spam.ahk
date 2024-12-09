@@ -1,8 +1,8 @@
 ﻿;
 ; AutoHotkey Version:	1.1.33.09
-; Script Version:		0.4.2
-; Language:				English
-; Platform:				Win10
+; Script Version:	0.4.2
+; Language:		English
+; Platform:		Win10
 ;
 ; Script Function:
 ;	Easy configure action key spam toggle with robust modifier keys support. Set your
@@ -30,9 +30,9 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #ifWinActive World of Warcraft ; Only run if window "World of Warcraft" is active
 
 ;================= User Configurable Values =================
-activationkey := "F1"			; Set the mouse or keyboard key to start or run the macro
-runms := "90"					; Set your preferred macro run time in ms
-monitor := true					; Set if monitor display is active
+activationkey := "F1"		; Set the mouse or keyboard key to start or run the macro
+runms := "90"			; Set your preferred macro run time in ms
+monitor := true			; Set if monitor display is active
 ;================= User Configurable Values =================
 
 if (monitor)
@@ -40,8 +40,8 @@ if (monitor)
 if not monitor
 	_mvar := "hide "
 
-CustomColor := "EEAA99"  ; Can be any RGB color (it will be made transparent below).
-Gui +LastFound +AlwaysOnTop -Caption +ToolWindow  ; +ToolWindow avoids a taskbar button and an alt-tab menu item.
+CustomColor := "EEAA99"  				; Can be any RGB color (it will be made transparent below).
+Gui +LastFound +AlwaysOnTop -Caption +ToolWindow  	; +ToolWindow avoids a taskbar button and an alt-tab menu item.
 Gui, Color, %CustomColor%
 Gui, Font, s12  ; Set a large font size (32-point).
 Gui, Add, Text, vMyText cyellow, Press :  %activationkey%`tMS :  %runms%`n       --- Macro : OFF ---
@@ -59,7 +59,7 @@ toggle = false
 
 SetTimer, PressKey, %runms%
 
-#UseHook On					; do not allow AHK to trigger these hotkeys with Send
+#UseHook On			; do not allow AHK to trigger these hotkeys with Send
 
 HotKey,%activationkey%,DoToggle
 
@@ -81,11 +81,11 @@ else
 	{
 		GuiControl,, MyText, Press :  %activationkey%`tMS :  %runms%`n       --- Macro : ON   ---
 		
-		if NOT WinActive("World of Warcraft") ; if NOT same window as when this loop started, then…
-			WinWaitActive, World of Warcraft ; pause loop here and wait for original window to become Active again
+		if NOT WinActive("World of Warcraft") 		; if NOT same window as when this loop started, then…
+			WinWaitActive, World of Warcraft 	; pause loop here and wait for original window to become Active again
 
 		if GetKeyState("1", "P") {
-			Send, {Blind}{1}	;; blind mode to send modifiers
+			Send, {Blind}{1}			; blind mode to send modifiers
 		}
 		
 		if GetKeyState("2", "P") {
