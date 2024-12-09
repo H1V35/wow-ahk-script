@@ -43,7 +43,7 @@ if not monitor
 CustomColor := "EEAA99"  				; Can be any RGB color (it will be made transparent below).
 Gui +LastFound +AlwaysOnTop -Caption +ToolWindow  	; +ToolWindow avoids a taskbar button and an alt-tab menu item.
 Gui, Color, %CustomColor%
-Gui, Font, s12  ; Set a large font size (32-point).
+Gui, Font, s12  					; Set a large font size (32-point).
 Gui, Add, Text, vMyText cyellow, Press :  %activationkey%`tMS :  %runms%`n       --- Macro : OFF ---
 ; Make all pixels of this color transparent and make the text itself translucent (150):
 WinSet, TransColor, %CustomColor% 150
