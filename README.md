@@ -33,41 +33,41 @@ This repository contains an [AutoHotkey](https://www.autohotkey.com/) script des
 
 4. **In-Game Use**:
 
-- Launch World of Warcraft.
-- Press F1 (or the configured key) to activate the spam.
-- Hold down the desired key (e.g., 1). The script will send that key every 100ms while it’s held down.
-- To stop the spam, press F1 again.
+   - Launch World of Warcraft.
+   - Press F1 (or the configured key) to activate the spam.
+   - Hold down the desired key (e.g., 1). The script will send that key every 100ms while it’s held down.
+   - To stop the spam, press F1 again.
 
 ## Customization
 
 - **Activation Key**:
-Default: (`F1`)
-Change:
+   Default: (`F1`)
+   Change:
    ```ahk
    activationkey := "F1"
    ```
 
-to something else, e.g.
+   to something else, e.g.
    ```ahk
    activationkey := "F2"
    ```
 
 - **Interval (ms)**:
-Default: (`100`)
-Change:
+   Default: (`100`)
+   Change:
    ```ahk
    runms := "100"
    ```
 
-to another value, e.g. (`50`) or (`200`).
+   to another value, e.g. (`50`) or (`200`).
 
-Show/Hide the On-Screen Display:
-Default: true
-Change:
+- **Show/Hide the On-Screen Display**:
+   Default: true
+   Change:
    ```ahk
    monitor := true
    ```
-to false if you don’t want the on-screen status.
+   to false if you don’t want the on-screen status.
 
 - **Adjusting the GUI Position**:
 Inside the script’s (`Guisize`): section, change (`y0`) to another value (e.g. (`y50`)) to move the window down by 50 pixels.
